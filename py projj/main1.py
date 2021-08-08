@@ -1,23 +1,60 @@
 # Hi, I'm kc733, a newbie programmist
 # I'm not talented at all and don't know much yet
 # But I'm really trying my best with this project
-# No video or step-by-step tutorials were used
 # Keep in mind that this is the first time I'm using Tkinter
 # Thanks.
 
-from tkinter import Button, Tk, Label, Menu
-root = Tk(className = "MyDrugs")
+# main
+from tkinter import Button, Canvas, Entry, Frame, Message, Tk, Label, Menu
+root = Tk()
+root['bg'] = "#423C42"
+root.title('MyDrugs')
+root.geometry('1000x700')
+root.resizable(width=False, height=False)
+
+# functions
+def enter_fun():
+    login = loginInput.get()
+    password = passField.get()
+    info = f'Information about the user: {str(login)}, {str(password)}'
+    print(info)
 
 # widgets
-main_w = Button(root, text="MyDrugs", bg="#423C42", height=120, width=400)
+
+# canvases
+canvas = Canvas(root, height=700, width=1000, bg='#423C42')
+canvas.pack()
+
+# frames
+frame = Frame(root, bg='blue')
+frame.place(relx=0.15, rely=0.15, relwidth=0.7, relheight=0.7)
+
+# titles
+title = Label(canvas, text='MyDrugs', bg='white', font=100) # make bigger and change font
+title.pack()
+
+# menu
 menubar = Menu(root, bg="yellow", title="Buy drugs online", )
-filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Meth")
-filemenu.add_command(label="MDMA")
-filemenu.add_command(label="Cocaine")
-filemenu.add_command(label="Deluxe Case")
-filemenu.add_separator()
-filemenu.add_command(label="FAQ")
+menubar.add_command(label="Meth")
+menubar.add_command(label="MDMA")
+menubar.add_command(label="Cocaine")
+menubar.add_command(label="Deluxe Case")
+menubar.add_separator()
+menubar.add_command(label="FAQ")
 root.config(menu=menubar)
-main_w.pack()
+menubar.place()
+
+# login bar # needs replacing
+passframe = Frame(root, bg='white')
+passframe.place(relx=0.1, rely=0.1)
+loginInput = Entry(passframe, bg='white')
+loginInput.pack()
+
+passField = Entry(passframe, bg='white', show='*')
+passField.pack()
+
+enter = Button(passframe, text='Login', command=enter_fun)
+enter.pack()
+
+
 root.mainloop()
