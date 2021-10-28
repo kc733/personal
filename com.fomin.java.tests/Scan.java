@@ -15,15 +15,14 @@ public class Scan {
 
         if(age>16){
             System.out.print("\nAccess granted");
+            System.out.print("\nAnd what is your favourite food? ");
+            String food = scaner.nextLine();
+            System.out.print(food+"? Good choice.");
             
         }else{
             System.out.print("\nAccess denied");
         }
-
-        System.out.print("\nAnd what is your favourite food? ");
-        String food = scaner.nextLine();
-        System.out.print(food+"? Good choice.");
-
+        
     }   
     
 }
