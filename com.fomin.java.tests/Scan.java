@@ -23,6 +23,7 @@ public class Scan {
             System.out.print("\nAccess denied");
         }
         
+        scaner.close();
     }   
     
 }
