@@ -6,7 +6,6 @@ def is_pangram(pangram):
 
     if set(pangram.lower()) >= alphabet:
         return True
-        print("True")
     else:
         return False
 
