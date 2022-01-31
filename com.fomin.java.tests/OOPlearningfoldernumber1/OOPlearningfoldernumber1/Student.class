@@ -1,4 +1,4 @@
-package OOPlearningfoldernumber1;
+
 import javax.swing.JOptionPane;
 
 public class Student {
